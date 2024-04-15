@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/index.ts",
+    "prisma-generate": "prisma generate --schema prisma/auth.prisma --watch & prisma generate --schema prisma/blog.prisma --watch",
+    "prisma-migrate": "npx prisma migrate dev --name init --schema prisma/auth.prisma; npx prisma migrate dev --name init --schema prisma/blog.prisma"
   },
   "author": "Abel Getu",
   "license": "ISC",
